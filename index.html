@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0d1628">
+  <title>AAAS · AI 기반 해양사고 분석 시스템</title>
+  <script src="entry.js" defer></script>
+</head>
+<body>
+  <noscript>이 화면을 사용하려면 브라우저에서 JavaScript를 활성화해 주세요.</noscript>
+  <template id="user-layout">
+
+  <a class="skip" href="#content">본문 바로가기</a>
+  <aside class="user-sidebar" aria-label="사용자 메뉴">
+    <div class="side-brand"><a href="#home" class="wordmark" aria-label="AAAS 홈">AAAS</a><button class="icon-btn" data-action="sidebar" aria-label="메뉴 접기" aria-expanded="true" id="sidebar-toggle"></button></div>
+    <a class="new-chat" href="#home" id="new-chat-link"></a>
+    <nav id="user-nav" aria-label="주요 서비스"></nav>
+    <div class="side-section-title">최근 대화 <span id="chat-count"></span></div>
+    <div id="recent-chats" class="recent-chats"></div>
+    <div class="side-bottom"><a class="admin-link" href="index.html?view=admin#dashboard"><span id="admin-icon"></span><span class="nav-label">시스템 관리</span><span class="external-symbol">↗</span></a><button class="profile" data-action="settings"><span class="user-avatar">김</span><span class="profile-name">김해심<small>해양사고 분석관 · 예시</small></span><span id="settings-icon"></span></button></div>
+  </aside>
+  <div class="mobile-shade" data-action="sidebar"></div>
+  <div class="user-shell">
+    <header class="user-topbar"><div class="top-context"><button class="icon-btn mobile-toggle" data-action="sidebar" aria-label="메뉴 열기"></button><span class="top-label">MARITIME INTELLIGENCE</span><span class="context-divider"></span><span id="page-context">해양사고 분석 워크스페이스</span></div><div class="top-tools"><span class="preview-label">사용자 UI 시안</span><button class="top-btn" data-action="export" id="export-button"></button><button class="icon-btn notification" data-action="notifications" aria-label="알림 목록"><span id="bell-icon"></span><i id="unread-dot"></i></button></div></header>
+    <main id="content" tabindex="-1"></main>
+    <footer class="user-footer"><span>AAAS의 응답은 참고 자료이며, 심판관의 최종 법적 판단을 대체하지 않습니다.</span><button data-action="scenarios">상태별 UI 확인</button></footer>
+  </div>
+  <div id="drawer-shade" class="drawer-shade"></div>
+  <aside class="canvas-panel" id="canvas-panel" role="dialog" aria-modal="true" aria-labelledby="canvas-title" hidden></aside>
+  <dialog id="user-dialog" aria-labelledby="user-dialog-title"></dialog>
+  <div id="user-toast" role="status" aria-live="polite"></div>
+  <input type="file" id="attachment-input" multiple accept=".pdf,.hwp,.hwpx,.docx,.txt" hidden>
+
+  </template>
+  <template id="admin-layout">
+<a href="#main" class="skip-link">본문 바로가기</a>
+  <aside class="sidebar" id="sidebar">
+    <a class="brand" href="#dashboard" aria-label="중해심 AI 시스템관리 홈"><span class="brand-symbol">H<span>·</span></span><span>중해심 <b>AI</b><small>해양안전심판 AI 플랫폼</small></span></a>
+    <div class="workspace"><span class="workspace-icon">S</span><span>시스템 관리<small>Administrator workspace</small></span><span class="workspace-lock">⌘</span></div>
+    <nav id="navigation" aria-label="시스템 관리 메뉴"></nav>
+    <div class="sidebar-bottom"><span class="live-dot"></span><span>모든 시스템 정상 운영 중<small>운영 상태 예시 · 프로토타입</small></span></div>
+    <div class="sidebar-profile"><span class="avatar">김</span><span>시스템 관리자<small>admin@haesim.go.kr · 예시</small></span><span class="profile-role">관리자</span></div>
+  </aside>
+  <div class="sidebar-shade" id="sidebar-shade"></div>
+  <div class="app-shell">
+    <header class="topbar">
+      <div class="breadcrumb"><button class="icon-button mobile-menu" id="mobile-menu" aria-label="메뉴 열기"></button><span id="home-icon"></span><span class="crumb-divider">/</span><span>시스템 관리</span><span class="crumb-divider">/</span><strong id="breadcrumb-title">운영 대시보드</strong></div>
+      <div class="top-actions"><a class="button" href="index.html#home">사용자 화면 ↗</a><span class="demo-tag">DESIGN PREVIEW</span><span class="environment"><i></i> 운영 환경</span><span class="top-divider"></span><button class="icon-button notification-button" id="notification-button" aria-label="시스템 알림 보기"></button><span class="avatar small">김</span></div>
+    </header>
+    <main id="main" tabindex="-1"></main>
+    <footer><span>중앙해양안전심판원 <b>·</b> AI 통합 운영 플랫폼</span><span>화면 설계 시안 v1.0 <b>·</b> 모든 데이터는 예시입니다.</span></footer>
+  </div>
+  <dialog id="detail-dialog" aria-labelledby="dialog-title"><div id="dialog-content"></div></dialog>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  </template>
+</body>
+</html>
